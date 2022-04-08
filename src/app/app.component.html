@@ -1,0 +1,43 @@
+
+<div class="row" style="display: flex;">
+<div><h3>Inventory Information</h3>
+<ag-grid-angular
+    style="width: 602px; height: 250px;"
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs">
+</ag-grid-angular>
+</div>
+
+<div><h3>Requested Kernal Information</h3>
+<ag-grid-angular
+    style="width: 602px; height: 250px;"
+    class="ag-theme-alpine"
+    [rowData]="kernalRowData"
+    [columnDefs]="kernalcolumnDefs">
+</ag-grid-angular>
+</div>
+</div>
+
+<div style="display: flex; margin-top: 20px;">
+<select class="text-box" [(ngModel)]="inventorySelectionValue" style="width: 80px; margin-right: 10px;">
+  <option *ngFor="let item of inventoryList" [value]="item.label">{{item.value}}</option>
+</select>
+
+
+<div  >
+  <input type="number" #inputNumber min="0" style="margin-right: 10px;">
+  <button (click)="fetchRequestKernals(inputNumber.value)">Check Kernals Availability</button>
+</div>
+
+
+<div *ngIf="inventory"  style="margin-left: 10px;">
+
+  <p style="color: blue; margin: 0;"> your requested kernals are available</p>
+  {{requestedKernals}}
+</div>
+<div *ngIf="noInventory"   style="margin-left: 10px;">
+
+  <p style="color: red;margin: 0;"> your requested kernals are not available</p>
+</div>
+</div>

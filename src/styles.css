@@ -1,0 +1,9 @@
+/* Add application styles & imports to this file! */
+
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: #f5f8fa;
+}
